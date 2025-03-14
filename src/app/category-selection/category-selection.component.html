@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="category-selection">
+    <div *ngFor="let category of categories" 
+        class="category-tile"
+        [class.selected]="selectedCategories.includes(category)"
+        [ngClass]="getCategoryClass(category)"
+        (click)="toggleCategory(category)">
+      {{ category.name }}
+    </div>
+  </div>
+
+  <!-- Przycisk do rozpoczęcia gry z wybranymi kategoriami -->
+  <div class="game-start">
+    <button (click)="startGame()">Rozpocznij grę</button>
+  </div>
+</div>

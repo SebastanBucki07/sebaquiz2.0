@@ -1,0 +1,148 @@
+/* Stylowanie formularza */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* Nagłówek formularza */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Stylowanie pól wejściowych */
+.team-input {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stylowanie inputów */
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+input:focus {
+  border-color: #5bc0de; /* Kolor przy focusie */
+  background-color: #e6f7ff;
+  outline: none;
+}
+
+/* Kolor obramowania i tła dla błędów */
+input.ng-invalid.ng-touched {
+  border-color: #d9534f;
+  background-color: #f8d7da;
+}
+
+/* Przycisk Usuń */
+button.remove-team {
+  padding: 10px 20px; /* Increase padding */
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px; /* Increase font size */
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button.remove-team:hover {
+  background-color: #c9302c;
+}
+
+button.remove-team:focus {
+  outline: none;
+}
+
+/* Wyświetlanie błędów */
+.error {
+  color: #d9534f;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 5px;
+  display: block;
+  text-align: left;
+  line-height: 1.4;
+  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
+
+/* Stylowanie przycisku Dodaj drużynę */
+button.add-team {
+  padding: 15px 30px; /* Increase padding */
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px; /* Increase font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+button.add-team:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+button.add-team:hover {
+  background-color: #31b0d5;
+}
+
+/* Stylowanie przycisku Wybierz kategorię */
+button.start-game {
+  padding: 15px 30px; /* Increase padding */
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px; /* Increase font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; /* Add margin between buttons */
+}
+
+button.start-game:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+button.start-game:hover {
+  background-color: #31b0d5;
+}
+
+/* Responsywność - dopasowanie do mniejszych ekranów */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    width: 90%;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

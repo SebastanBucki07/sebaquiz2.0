@@ -1,0 +1,133 @@
+/* Container for the game section */
+.game-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* Table header styling */
+thead th {
+  background-color: #5bc0de;
+  color: white;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Table body styling */
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Table cell styling */
+td {
+  padding: 10px;
+}
+
+/* Table header cell styling */
+th {
+  padding: 10px;
+}
+
+/* Categories button styling */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #31b0d5;
+}
+
+button {
+  background-color: #0275d8;
+}
+
+button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+/* Responsive table */
+@media (max-width: 600px) {
+  table {
+    font-size: 16px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
+button {
+  color: #000000;
+  text-transform: uppercase;
+  padding: 20px 30px; /* Increase padding for larger tiles */
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+  font-size: 30px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+  text-align: center; /* Center text */
+}
+
+button.nauka  {
+  background-color: #f0e68c;
+}
+
+button.muzyka  {
+  background-color: #add8e6; ;
+ 
+}
+
+button.film  {
+  background-color: #f08080;  ; /* Example color for Film */
+}
+
+button.sport  {
+  background-color: #90ee90; /* Example color for Sport */
+}
+
+button.geografia  {
+  background-color: #d2b48c; /* Example color for Geografia */
+}
+
+button.rozne {
+  background-color: #dda0dd; /* Example color for Różne */
+}

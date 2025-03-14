@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Podaj nazwy drużyn</h2>
+
+  <form [formGroup]="teamForm">
+    <div formArrayName="teams" *ngFor="let team of teams; let i = index" class="team-input">
+      <div [formGroupName]="i">
+        <input formControlName="name" placeholder="Drużyna {{ i + 1 }}" />
+        
+        <!-- Wyświetlanie błędów -->
+        <span *ngIf="team.get('name')?.hasError('required')" class="error">Nazwa drużyny jest wymagana!</span>
+        <span *ngIf="team.get('name')?.hasError('minlength')" class="error">Nazwa drużyny musi mieć co najmniej 3 znaki!</span>
+        <span *ngIf="team.get('name')?.hasError('maxlength')" class="error">Nazwa drużyny nie może mieć więcej niż 20 znaków!</span>
+        <span *ngIf="team.get('name')?.hasError('noSpecialCharactersOrSpaces')" class="error">Nazwa drużyny nie może zawierać znaków specjalnych oraz spacji</span>
+        <button class="remove-team" (click)="removeTeam(i)" *ngIf="teams.length > 1">Usuń</button>
+      </div>
+    </div>
+
+    <button class="add-team" (click)="addTeam()" [disabled]="teams.length >= 4">Dodaj drużynę</button>
+
+
+    <button class="start-game" (click)="startGame()" [disabled]="!isFormValid()">Wybierz kategorię</button>
+
+  </form>
+</div>
+

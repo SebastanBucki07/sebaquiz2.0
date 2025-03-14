@@ -1,0 +1,65 @@
+/* Stylowanie formularza */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.category-selection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 10px;
+  padding: 10px;
+}
+
+.category-tile {
+  padding: 20px 30px; /* Increase padding for larger tiles */
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+  font-size: 30px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+  text-align: center; /* Center text */
+  text-transform: uppercase;
+}
+
+.category-tile.selected {
+  background-color: #007bff;
+  color: #000000;
+}
+
+.category-tile.nauka.selected  {
+  background-color: #f0e68c
+}
+
+.category-tile.muzyka.selected  {
+  background-color: #add8e6; ;
+ 
+}
+
+.category-tile.film.selected  {
+  background-color: #f08080;  ; /* Example color for Film */
+}
+
+.category-tile.sport.selected  {
+  background-color: #90ee90; /* Example color for Sport */
+}
+
+.category-tile.geografia.selected  {
+  background-color: #d2b48c; /* Example color for Geografia */
+}
+
+.category-tile.rozne.selected {
+  background-color: #dda0dd; /* Example color for Różne */
+}
+
+.game-start {
+  margin-top: 20px;
+  text-align: center;
+}
