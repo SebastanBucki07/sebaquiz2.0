@@ -131,3 +131,91 @@ button.geografia  {
 button.rozne {
   background-color: #dda0dd; /* Example color for Różne */
 }
+
+.question-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.question-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+}
+
+.answer-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.answer-tile {
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.answer-tile.correct {
+  background-color: #4caf50; /* Green */
+}
+
+.answer-tile.incorrect {
+  background-color: #f44336; /* Red */
+}
+
+.answer-tile.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.answer-message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.crest-fragment {
+  width: 300px; /* Larger fixed width */
+  height: 300px; /* Larger fixed height */
+  border: 2px solid #ddd;
+  background-size: 500%; /* Ensure the background is large enough to show only a fragment */
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 20px auto;
+}
+
+.correct-answer {
+  margin-top: 20px;
+  font-size: 48px; /* Larger font size */
+  font-weight: bold;
+  color: black;
+}
+
+button.correct-button {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+button.incorrect-button {
+  background-color: #f44336; /* Red */
+  color: white;
+}

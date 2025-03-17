@@ -28,3 +28,39 @@
     </button>
   </div>
 </div>
+
+<!-- Full-screen overlay for the multiple choice question -->
+<div *ngIf="currentQuestion && currentCategory !== 'Klubowe herby'" class="question-overlay">
+  <div class="question-container">
+    <h3>{{ currentQuestion.text }}</h3>
+    <div class="answer-tiles">
+      <div class="answer-tile" 
+           [ngClass]="{'correct': selectedAnswer && currentQuestion.answer === currentQuestion.a, 'incorrect': selectedAnswer === currentQuestion.a && !isAnswerCorrect, 'disabled': buttonsDisabled}"
+           (click)="selectAnswer(currentQuestion.a)">{{ currentQuestion.a }}</div>
+      <div class="answer-tile" 
+           [ngClass]="{'correct': selectedAnswer && currentQuestion.answer === currentQuestion.b, 'incorrect': selectedAnswer === currentQuestion.b && !isAnswerCorrect, 'disabled': buttonsDisabled}"
+           (click)="selectAnswer(currentQuestion.b)">{{ currentQuestion.b }}</div>
+      <div class="answer-tile" 
+           [ngClass]="{'correct': selectedAnswer && currentQuestion.answer === currentQuestion.c, 'incorrect': selectedAnswer === currentQuestion.c && !isAnswerCorrect, 'disabled': buttonsDisabled}"
+           (click)="selectAnswer(currentQuestion.c)">{{ currentQuestion.c }}</div>
+    </div>
+    <div *ngIf="answerMessage" class="answer-message">{{ answerMessage }}</div>
+  </div>
+</div>
+
+<!-- Full-screen overlay for the club crest question -->
+<div *ngIf="currentCrest && currentCategory === 'Klubowe herby'" class="question-overlay">
+  <div class="question-container">
+    <div class="crest-fragment" [style.backgroundImage]="crestFragment" [style.transform]="'rotate(' + rotation + 'deg)'" [style.backgroundSize]="backgroundSize" [style.backgroundPosition]="backgroundPosition" [style.backgroundRepeat]="'no-repeat'"></div>
+    <div class="answer-tiles" *ngIf="!showCorrectAnswer">
+      <button *ngIf="difficulty === 'hard'" (click)="showCrestFragment('medium')">Średni</button>
+      <button *ngIf="difficulty !== 'easy'" (click)="showCrestFragment('easy')">Łatwy</button>
+      <button (click)="showAnswer()">Pokaż odpowiedź</button>
+    </div>
+    <div *ngIf="showCorrectAnswer" class="correct-answer">
+      <p>Odpowiedź: {{ currentCrest }}</p>
+      <button class="correct-button" (click)="handleCrestAnswer(true)">Dobrze</button>
+      <button class="incorrect-button" (click)="handleCrestAnswer(false)">Źle</button>
+    </div>
+  </div>
+</div>
